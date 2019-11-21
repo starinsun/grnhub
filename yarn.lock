@@ -968,10 +968,10 @@
   dependencies:
     "@react-navigation/routers" "^5.0.0-alpha.15"
 
-"@react-navigation/core@^5.0.0-alpha.23":
-  version "5.0.0-alpha.23"
-  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.0.0-alpha.23.tgz#5a73385600c0f954c033152b217e506dbc1543b1"
-  integrity sha512-zIEoIUfItKblNg9hCj9OQtTLVijtw0PKYk+PdZCeZTmR41h5eHBhpoACaBAE6ZHAyQQtuxTkIlsEjZo7+t5DpQ==
+"@react-navigation/core@^5.0.0-alpha.24":
+  version "5.0.0-alpha.24"
+  resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.0.0-alpha.24.tgz#e56ecbcf4f78ae9261bb1facdb40576219e4542a"
+  integrity sha512-Nalwv41OM9cui7+xQNWrSJjGInWValC7guGNh58VqKqq8CUPvbEqAtWLqXDZj9VksbUu5Tq9I/mK+BpUMkUFrw==
   dependencies:
     escape-string-regexp "^2.0.0"
     query-string "^6.9.0"
@@ -992,10 +992,10 @@
   dependencies:
     "@react-navigation/routers" "^5.0.0-alpha.15"
 
-"@react-navigation/material-top-tabs@^5.0.0-alpha.18":
-  version "5.0.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/@react-navigation/material-top-tabs/-/material-top-tabs-5.0.0-alpha.18.tgz#fb77e6223cdd37b3f13f832a575f9863c51db3f0"
-  integrity sha512-HED+qrCWFucIIFJTeT5vXC2mk/sqSK64ZJf3S1Jsp4a9fHrTcsNC0hZbdgjhdeqla9KRSuxvejN0k8EgIm0Obw==
+"@react-navigation/material-top-tabs@^5.0.0-alpha.19":
+  version "5.0.0-alpha.19"
+  resolved "https://registry.yarnpkg.com/@react-navigation/material-top-tabs/-/material-top-tabs-5.0.0-alpha.19.tgz#eba838947d872f751396b5c0ffec9de8d67765df"
+  integrity sha512-Um+hZc2QqQx+XI49cI8Bn/Ak/7WfBaM7FkoGL/zXcOxcJDWeJAamW4g7vqa8bpg2mrUaUkIOJWKNKcYe1gWriA==
   dependencies:
     "@react-navigation/routers" "^5.0.0-alpha.15"
 
@@ -5399,6 +5399,11 @@ react-native-screens@1.0.0-alpha.23:
   integrity sha512-tOxHGQUN83MTmQB4ghoQkibqOdGiX4JQEmeyEv96MKWO/x8T2PJv84ECUos9hD3blPRQwVwSpAid1PPPhrVEaw==
   dependencies:
     debounce "^1.2.0"
+
+react-native-tab-view@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.11.0.tgz#2e57d1f617ccc88c7f452708804f3409f880b700"
+  integrity sha512-vqetlxGO7A8bnqvXcB50MWpRZAImXFrDGz1WCQKdCqe03Ey3ZzENe7yLuWrtBJYlepGfOLAsmCXv+wW82Yfm1w==
 
 react-native-vector-icons@^6.6.0:
   version "6.6.0"

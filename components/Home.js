@@ -1,29 +1,49 @@
-import {useFocusEffect} from '@react-navigation/core';
-import {View, Button, Text} from 'react-native';
-import React, {useCallback, useEffect} from 'react';
+import React from 'react';
+import {Text, View} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
+import {Button} from 'react-native-paper';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {NavigationNativeContainer} from '@react-navigation/native';
 
-const Home = ({navigation}) => {
-  useFocusEffect(
-    useCallback(() => {
-      console.log('focused');
-      return () => {
-        console.log('out');
-      };
-    }, []),
-  );
-
+const Home = () => {
+  const topTab = createMaterialTopTabNavigator();
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button
-        title='Go to About'
-        onPress={() =>
-          navigation.navigate('About', {
-            id: 3,
-          })
-        }
+    <topTab.Navigator initialRouteName="left">
+      <topTab.Screen
+        name="left"
+        component={left}
+        options={{tabBarLabel: 'Home'}}
       />
-      {/* <Button title='Open 抽屉' onPress={() => navigation.openDrawer()} /> */}
+      <topTab.Screen
+        name="right"
+        component={right}
+        options={{tabBarLabel: 'updates'}}
+      />
+    </topTab.Navigator>
+  );
+};
+
+const left = () => {
+  const nav = useNavigation();
+  return (
+    <View style={{alignItems: 'flex-start'}}>
+      <Text>Home</Text>
+      <Button
+        icon="camera"
+        mode="contained"
+        onPress={() => {
+          nav.navigate('About', {id: 2});
+        }}>
+        Press ME
+      </Button>
+    </View>
+  );
+};
+
+const right = () => {
+  return (
+    <View>
+      <Text>Home 2</Text>
     </View>
   );
 };

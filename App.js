@@ -1,84 +1,72 @@
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationNativeContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/AntDesign';
 
+import {NavigationNativeContainer} from '@react-navigation/native';
+import React from 'react';
 import About from './components/About';
 import Home from './components/Home';
+import Profile from './components/Profile';
+import Who from './components/Who';
 
-import Logo from './utils/Logo';
-import {Button} from 'react-native';
+const Tab = createMaterialBottomTabNavigator();
 
-// Stack 导航
-const Stack = createStackNavigator();
-
-const App = () => (
-  <NavigationNativeContainer>
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#61DAF6',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: '700',
-          fontStyle: 'italic',
-        },
-      }}>
-      <Stack.Screen
-        name='Home'
-        component={Home}
-        options={{
-          headerTitle: props => <Logo {...props} />,
-          headerRight: () => (
-            <Button
-              onPress={() => alert('this is a button')}
-              title='Info'
-              color='#61F6AD'
-            />
-          ),
-        }}
-      />
-      <Stack.Screen
-        name='About'
-        component={About}
-        options={({route}) => ({
-          title: `About id:${route.params.id}`,
-        })}
-      />
-    </Stack.Navigator>
-  </NavigationNativeContainer>
-);
-
-// Botton Tab 导航
-// const Tab = createBottomTabNavigator();
-
-// const App = () => {
-//   return (
-//     <NavigationNativeContainer>
-//       <Tab.Navigator
-
-//       >
-//         <Tab.Screen name='Home' component={Home} />
-//         <Tab.Screen name='About' component={About} />
-//       </Tab.Navigator>
-//     </NavigationNativeContainer>
-//   );
-// };
-
-// // 抽屉导航
-// const Drawer = createDrawerNavigator();
-
-// const App = () => {
-//   return (
-//     <NavigationNativeContainer>
-//       <Drawer.Navigator initialRouteName='Home'>
-//         <Drawer.Screen name='Home' component={Home} />
-//         <Drawer.Screen name='About' component={About} />
-//       </Drawer.Navigator>
-//     </NavigationNativeContainer>
-//   );
-// };
+const App = () => {
+  return (
+    <NavigationNativeContainer>
+      <Tab.Navigator activeColor="#f0edf6">
+        <Tab.Screen
+          name="Home"
+          component={Home}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarColor: '#70f3ff',
+            tabBarIcon: ({color}) => (
+              <MaterialCommunityIcons name="home" color={color} size={20} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="About"
+          component={About}
+          options={{
+            tabBarLabel: 'About',
+            tabBarColor: '#f47983',
+            tabBarIcon: ({color}) => {
+              return (
+                <MaterialCommunityIcons
+                  name="creditcard"
+                  color={color}
+                  size={20}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarColor: '#48c0a3',
+            tabBarIcon: ({color}) => (
+              <MaterialCommunityIcons name="chrome" color={color} size={20} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="who"
+          component={Who}
+          options={{
+            tabBarLabel: 'who',
+            tabBarColor: '#b0a4e3',
+            tabBarIcon: ({color}) => (
+              <MaterialCommunityIcons name="mail" color={color} size={20} />
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    </NavigationNativeContainer>
+  );
+};
 
 export default App;
