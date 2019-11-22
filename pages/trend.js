@@ -1,7 +1,13 @@
+/*
+ * @Date: 2019-11-19 02:36:12
+ * @LastEditors: Asen Wang
+ * @LastEditTime: 2019-11-22 02:01:31
+ * @content: I
+ */
 import React, {useState} from 'react';
 import {Text, View, FlatList, ActivityIndicator} from 'react-native';
 
-const Profile = () => {
+const Trend = () => {
   const [data, setData] = useState([
     {key: 'a'},
     {key: 'b'},
@@ -29,6 +35,7 @@ const Profile = () => {
               alignItems: 'center',
               backgroundColor: '#7812c6',
               margin: 5,
+              borderRadius: 2,
             }}>
             <Text>{item.key}</Text>
           </View>
@@ -49,4 +56,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Trend;
