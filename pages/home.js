@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-18 00:32:02
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-23 23:35:33
+ * @LastEditTime: 2019-11-23 23:58:42
  * @content: I
  */
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
@@ -13,7 +13,7 @@ import FontAwesome5Icons from 'react-native-vector-icons/FontAwesome5';
 import React from 'react';
 import Favor from './favor';
 import Trend from './trend';
-import Mine from './mine';
+import Search from './search';
 import List from '../components/List';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -33,6 +33,28 @@ const Home = () => {
         }}
       />
       <Tab.Screen
+        name="trend"
+        component={Trend}
+        options={{
+          tabBarLabel: '趋势',
+          tabBarColor: '#ff6400',
+          tabBarIcon: ({color}) => (
+            <AntdIcons name="rocket1" color={color} size={20} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="search"
+        component={Search}
+        options={{
+          tabBarLabel: '搜索',
+          tabBarColor: '#a4f326',
+          tabBarIcon: ({color}) => (
+            <FontAwesome5Icons name="search" color={color} size={20} />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="favor"
         component={Favor}
         options={{
@@ -47,28 +69,6 @@ const Home = () => {
               />
             );
           },
-        }}
-      />
-      <Tab.Screen
-        name="trend"
-        component={Trend}
-        options={{
-          tabBarLabel: '趋势',
-          tabBarColor: '#ff4400',
-          tabBarIcon: ({color}) => (
-            <AntdIcons name="rocket1" color={color} size={20} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="mine"
-        component={Mine}
-        options={{
-          tabBarLabel: '我的',
-          tabBarColor: '#a4e2a6',
-          tabBarIcon: ({color}) => (
-            <FontAwesome5Icons name="baby" color={color} size={20} />
-          ),
         }}
       />
     </Tab.Navigator>

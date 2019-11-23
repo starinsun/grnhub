@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-18 20:23:31
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-23 23:32:43
+ * @LastEditTime: 2019-11-23 23:47:47
  * @content: I
  */
 import React from 'react';
@@ -15,7 +15,11 @@ const App = () => {
   return (
     <NavigationNativeContainer>
       <Stack.Navigator initialRouteName="home">
-        <Stack.Screen name="home" component={Home} options={{title: '主页'}} />
+        <Stack.Screen
+          name="home"
+          component={Home}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="detail"
           component={Detail}
