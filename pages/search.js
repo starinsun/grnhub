@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-20 21:21:28
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-23 23:57:08
+ * @LastEditTime: 2019-11-24 16:05:05
  * @content: I
  */
 import React, {useState} from 'react';
@@ -11,6 +11,7 @@ import {ActivityIndicator} from 'react-native-paper';
 import {Searchbar} from 'react-native-paper';
 import {useSelector} from 'react-redux';
 import axios from 'axios';
+import HeightEqualExample from '../components/Flatlist';
 
 const Search = () => {
   const nav = useNavigation();
@@ -26,7 +27,9 @@ const Search = () => {
     );
     setLoad(false);
     setData(res.data.items);
+    // storage.save({key: 'count', data: {name: search}});
   };
+
   return (
     <View>
       <Searchbar
@@ -43,6 +46,7 @@ const Search = () => {
       ) : (
         data.map(item => <Text>{item.full_name}</Text>)
       )}
+      <HeightEqualExample />
     </View>
   );
 };

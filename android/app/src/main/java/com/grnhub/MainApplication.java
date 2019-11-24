@@ -1,3 +1,9 @@
+/*
+ * @Date: 2019-11-18 00:32:02
+ * @LastEditors: Asen Wang
+ * @LastEditTime: 2019-11-24 17:30:02
+ * @content: I
+ */
 package com.grnhub;
 
 import android.app.Application;
@@ -55,7 +61,7 @@ public class MainApplication extends Application implements ReactApplication {
     if (BuildConfig.DEBUG) {
       try {
         /*
-         We use reflection here to pick up the class that initializes Flipper,
+        We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
         Class<?> aClass = Class.forName("com.facebook.flipper.ReactNativeFlipper");

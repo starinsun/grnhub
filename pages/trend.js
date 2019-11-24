@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-19 02:36:12
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-22 02:01:31
+ * @LastEditTime: 2019-11-24 17:34:26
  * @content: I
  */
 import React, {useState} from 'react';
@@ -25,7 +25,6 @@ const Trend = () => {
   ]);
   return (
     <View>
-      <Text>Profile</Text>
       <FlatList
         data={data}
         renderItem={({item}) => (
@@ -33,8 +32,7 @@ const Trend = () => {
             style={{
               height: 100,
               alignItems: 'center',
-              backgroundColor: '#7812c6',
-              margin: 5,
+              padding: 5,
               borderRadius: 2,
             }}>
             <Text>{item.key}</Text>
@@ -45,12 +43,30 @@ const Trend = () => {
           setData([...newData]);
         }}
         refreshing={false}
-        // ListFooterComponent={() => (
-        //   <View>
-        //     <ActivityIndicator size={'large'} animating={true} />
-        //   </View>
-        // )}
-        // extraData={data => data.reverse()}
+        initialNumToRender={8}
+        ListHeaderComponent={() => <Text>Head</Text>}
+        ItemSeparatorComponent={() => (
+          <View
+            style={{height: 2, backgroundColor: '#ccc', marginHorizontal: 15}}
+          />
+        )}
+        ListFooterComponent={() => (
+          <View>
+            <ActivityIndicator size={'large'} animating={true} />
+          </View>
+        )}
+        onEndReachedThreshold={0.1}
+        onEndReached={() =>
+          setData(
+            ...data,
+            {key: 'g'},
+            {key: 'h'},
+            {key: 'j'},
+            {key: 'k'},
+            {key: 'u'},
+            {key: 'i'},
+          )
+        }
       />
     </View>
   );

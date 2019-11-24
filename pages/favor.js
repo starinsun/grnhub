@@ -1,14 +1,7 @@
 /*
- * @Date: 2019-11-18 19:16:17
- * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-23 21:03:32
- * @content: I
- */
-
-/*
  * @Date: 2019-11-20 21:21:28
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-23 23:20:30
+ * @LastEditTime: 2019-11-24 03:02:55
  * @content: I
  */
 import React from 'react';
@@ -22,6 +15,9 @@ const Favor = () => {
   const nav = useNavigation();
   const count = useSelector(state => state.count);
   const dispatch = useDispatch();
+  storage.load({key: 'count'}).then(res => {
+    console.log(res.name);
+  });
   return (
     <View style={{alignItems: 'center'}}>
       <Button
@@ -45,6 +41,16 @@ const Favor = () => {
         }}>
         去detail
       </Button>
+
+      <View>
+        {/* <Text>{data.name}</Text> */}
+        <Button
+          onPress={() => {
+            storage.clearMap();
+          }}>
+          Clear
+        </Button>
+      </View>
     </View>
   );
 };
