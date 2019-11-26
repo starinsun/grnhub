@@ -1,11 +1,7 @@
 /*
  * @Date: 2019-11-23 01:17:22
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-23 01:18:39
+ * @LastEditTime: 2019-11-25 19:02:07
  * @content: I
  */
-export default countDispatch = {
-  countUp: {type: 'add'},
-  countDown: {type: 'reduce'},
-  resetCount: {type: 'initial', value: 0},
-};
+export const GET_SEARCH_DATA = 'getSearchData';

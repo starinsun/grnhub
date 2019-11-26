@@ -1,20 +1,18 @@
 /*
  * @Date: 2019-11-20 21:21:28
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-24 03:02:55
+ * @LastEditTime: 2019-11-25 23:31:14
  * @content: I
  */
 import React from 'react';
 import {View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 import {Button} from 'react-native-paper';
-import {useSelector, useDispatch} from 'react-redux';
-import countDispatch from '../store/dispatch';
+// import {useSelector, useDispatch} from 'react-redux';
 
 const Favor = () => {
   const nav = useNavigation();
-  const count = useSelector(state => state.count);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   storage.load({key: 'count'}).then(res => {
     console.log(res.name);
   });
@@ -26,15 +24,6 @@ const Favor = () => {
         }}>
         Back
       </Button>
-      <Text>{count}</Text>
-      <Button
-        onPress={() => {
-          dispatch(countDispatch.countUp);
-        }}>
-        add
-      </Button>
-      <Button>reduce</Button>
-      <Button>reset</Button>
       <Button
         onPress={() => {
           nav.navigate('detail');
@@ -42,15 +31,14 @@ const Favor = () => {
         去detail
       </Button>
 
-      <View>
-        {/* <Text>{data.name}</Text> */}
+      {/* <View>
         <Button
           onPress={() => {
             storage.clearMap();
           }}>
           Clear
         </Button>
-      </View>
+      </View> */}
     </View>
   );
 };

@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-18 00:32:02
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-24 00:30:26
+ * @LastEditTime: 2019-11-26 01:49:34
  * @content: I
  */
 import 'react-native-gesture-handler';
@@ -13,7 +13,7 @@ import {Provider as PaperProvider, DefaultTheme} from 'react-native-paper';
 import RNBootSplash from 'react-native-bootsplash';
 
 import {Provider as StoreProvider} from 'react-redux';
-import store from './store/store';
+import store from './store/reducer';
 import Storage from 'react-native-storage';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -27,10 +27,10 @@ const storage = new Storage({
 
 const theme = {
   ...DefaultTheme,
-  roundness: 3,
+  roundness: 10,
   colors: {
     ...DefaultTheme.colors,
-    primary: '#3498db',
+    primary: '#ddd',
     accent: '#377',
   },
 };

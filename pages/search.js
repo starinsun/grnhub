@@ -1,33 +1,30 @@
 /*
  * @Date: 2019-11-20 21:21:28
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-24 16:05:05
+ * @LastEditTime: 2019-11-26 03:27:55
  * @content: I
  */
 import React, {useState} from 'react';
 import {Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
-import {ActivityIndicator} from 'react-native-paper';
-import {Searchbar} from 'react-native-paper';
-import {useSelector} from 'react-redux';
-import axios from 'axios';
-import HeightEqualExample from '../components/Flatlist';
+import {ActivityIndicator, Searchbar} from 'react-native-paper';
+import {useSelector, useDispatch} from 'react-redux';
+import {getSearchDataByThunk} from '../store/action';
+
+import MyFlat from '../components/Flatlist';
 
 const Search = () => {
   const nav = useNavigation();
-  const count = useSelector(state => state.count);
-  const [data, setData] = useState([]);
+  const data = useSelector(state => state.searchData);
   const [search, setSearch] = useState('');
   const [load, setLoad] = useState(false);
 
-  const getData = async () => {
+  const dispatch = useDispatch();
+  const getSearchData = value => {
     setLoad(true);
-    let res = await axios.get(
-      `https://api.github.com/search/repositories?q=${search}&page=1&per_page=10`,
-    );
+    const action = getSearchDataByThunk(value);
     setLoad(false);
-    setData(res.data.items);
-    // storage.save({key: 'count', data: {name: search}});
+    dispatch(action);
   };
 
   return (
@@ -35,18 +32,16 @@ const Search = () => {
       <Searchbar
         placeholder="搜索"
         onChangeText={e => setSearch(e)}
-        onIconPress={getData}
+        onIconPress={() => getSearchData(search)}
         icon="map-search-outline"
         iconColor="#a4f326"
         value={search}
       />
-      <Text>{count}</Text>
       {load ? (
         <ActivityIndicator size="large" color="#a4f326" />
       ) : (
-        data.map(item => <Text>{item.full_name}</Text>)
+        <MyFlat data={data} color={'#a4f326'} />
       )}
-      <HeightEqualExample />
     </View>
   );
 };
