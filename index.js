@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-18 00:32:02
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-26 01:49:34
+ * @LastEditTime: 2019-11-26 18:45:37
  * @content: I
  */
 import 'react-native-gesture-handler';
@@ -14,16 +14,6 @@ import RNBootSplash from 'react-native-bootsplash';
 
 import {Provider as StoreProvider} from 'react-redux';
 import store from './store/reducer';
-import Storage from 'react-native-storage';
-import AsyncStorage from '@react-native-community/async-storage';
-
-const storage = new Storage({
-  size: 1000,
-  storageBackend: AsyncStorage,
-  defaultExpires: null,
-  enableCache: true, // 你可以在构造函数这里就写好sync的方法 // 或是在任何时候，直接对storage.sync进行赋值修改 // 或是写到另一个文件里，这里require引入
-  // sync: require('你可以另外写一个文件专门处理sync'),
-});
 
 const theme = {
   ...DefaultTheme,
@@ -38,7 +28,6 @@ const theme = {
 const Apps = () => {
   useEffect(() => {
     RNBootSplash.hide({duration: 250});
-    global.storage = storage;
     console.disableYellowBox = true;
   }, []);
   return (

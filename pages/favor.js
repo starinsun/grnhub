@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-20 21:21:28
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-25 23:31:14
+ * @LastEditTime: 2019-11-26 18:46:23
  * @content: I
  */
 import React from 'react';
@@ -13,9 +13,6 @@ import {Button} from 'react-native-paper';
 const Favor = () => {
   const nav = useNavigation();
   // const dispatch = useDispatch();
-  storage.load({key: 'count'}).then(res => {
-    console.log(res.name);
-  });
   return (
     <View style={{alignItems: 'center'}}>
       <Button
@@ -30,15 +27,6 @@ const Favor = () => {
         }}>
         去detail
       </Button>
-
-      {/* <View>
-        <Button
-          onPress={() => {
-            storage.clearMap();
-          }}>
-          Clear
-        </Button>
-      </View> */}
     </View>
   );
 };
