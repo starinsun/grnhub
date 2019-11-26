@@ -7,11 +7,12 @@
 import {GET_SEARCH_DATA} from './dispatch';
 import axios from 'axios';
 
-export const getSearchDataByThunk = value => {
+export const getSearchDataByThunk = (value, load) => {
   return async dispatch => {
     const res = await axios.get(
       `https://api.github.com/search/repositories?q=${value}&page=1&per_page=20`,
     );
+
     const action = {
       type: GET_SEARCH_DATA,
       value: res.data.items,

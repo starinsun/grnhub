@@ -6,23 +6,14 @@
  */
 import React from 'react';
 import {View, Text, FlatList} from 'react-native';
+import Repo from './Repo';
 
 const MyFlatl = ({data, color}) => {
   return (
     <View>
       <FlatList
         data={data}
-        renderItem={({item}) => (
-          <View
-            style={{
-              height: 100,
-              alignItems: 'center',
-              padding: 5,
-              borderRadius: 2,
-            }}>
-            <Text>{item.full_name}</Text>
-          </View>
-        )}
+        renderItem={({item}) => <Repo data={item} />}
         onRefresh={() => {}}
         refreshing={false}
         ItemSeparatorComponent={() => (

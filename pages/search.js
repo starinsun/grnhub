@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-20 21:21:28
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-26 03:27:55
+ * @LastEditTime: 2019-11-26 03:51:50
  * @content: I
  */
 import React, {useState} from 'react';
@@ -21,9 +21,7 @@ const Search = () => {
 
   const dispatch = useDispatch();
   const getSearchData = value => {
-    setLoad(true);
     const action = getSearchDataByThunk(value);
-    setLoad(false);
     dispatch(action);
   };
 
@@ -42,6 +40,7 @@ const Search = () => {
       ) : (
         <MyFlat data={data} color={'#a4f326'} />
       )}
+      <ActivityIndicator size="large" color="#a4f326" />
     </View>
   );
 };
