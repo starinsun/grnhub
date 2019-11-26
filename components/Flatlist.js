@@ -13,7 +13,7 @@ const MyFlatl = ({data, color}) => {
     <View>
       <FlatList
         data={data}
-        renderItem={({item}) => <Repo data={item} />}
+        renderItem={({item}) => <Repo data={item} color={color} />}
         onRefresh={() => {}}
         refreshing={false}
         ItemSeparatorComponent={() => (
