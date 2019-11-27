@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-20 21:21:28
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-26 03:51:50
+ * @LastEditTime: 2019-11-26 18:47:49
  * @content: I
  */
 import React, {useState} from 'react';
@@ -40,7 +40,7 @@ const Search = () => {
       ) : (
         <MyFlat data={data} color={'#a4f326'} />
       )}
-      <ActivityIndicator size="large" color="#a4f326" />
+      {/* <ActivityIndicator size="large" color="#a4f326" /> */}
     </View>
   );
 };

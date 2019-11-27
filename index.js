@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-18 00:32:02
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-26 18:45:37
+ * @LastEditTime: 2019-11-27 01:26:52
  * @content: I
  */
 import 'react-native-gesture-handler';
@@ -20,7 +20,7 @@ const theme = {
   roundness: 10,
   colors: {
     ...DefaultTheme.colors,
-    primary: '#ddd',
+    primary: '#fff',
     accent: '#377',
   },
 };

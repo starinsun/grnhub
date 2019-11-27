@@ -1,12 +1,13 @@
 /*
  * @Date: 2019-11-26 01:53:01
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-26 18:44:27
+ * @LastEditTime: 2019-11-26 20:30:48
  * @content: I
  */
 import React from 'react';
 import {View, Text} from 'react-native';
 import {Avatar, Title, IconButton} from 'react-native-paper';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const Repo = ({data, color}) => {
   const {full_name, description, watchers, forks} = data;
@@ -14,6 +15,17 @@ const Repo = ({data, color}) => {
   const language = data.language
     ? `language-${data.language.toLowerCase()}`
     : 'javascript';
+
+  const ChangeColor = async () => {
+    try {
+      await AsyncStorage.setItem(
+        JSON.stringify(full_name),
+        JSON.stringify(data),
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  };
   return (
     <View
       style={{
@@ -52,7 +64,7 @@ const Repo = ({data, color}) => {
             <IconButton icon="source-fork" size={20}></IconButton>
             <Text>{forks}</Text>
           </View>
-          <IconButton icon="heart" size={25}></IconButton>
+          <IconButton icon="heart" size={25} onPress={ChangeColor}></IconButton>
         </View>
       </View>
     </View>
