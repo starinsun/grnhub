@@ -38,7 +38,7 @@ const Search = () => {
       {load ? (
         <ActivityIndicator size="large" color="#a4f326" />
       ) : (
-        <MyFlat data={data} color={'#a4f326'} />
+        <MyFlat data={data} color={'#a4f326'} trend={false} />
       )}
       {/* <ActivityIndicator size="large" color="#a4f326" /> */}
     </View>

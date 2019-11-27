@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-20 21:21:28
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-27 02:30:54
+ * @LastEditTime: 2019-11-27 23:53:03
  * @content: I
  */
 import React, {useState, useEffect} from 'react';
@@ -20,7 +20,6 @@ const Favor = () => {
     try {
       const keys = await AsyncStorage.getAllKeys();
       const value = await AsyncStorage.multiGet(keys);
-      console.log(value);
       let data = [];
       value.map(item => {
         data.push(JSON.parse(item[1]));
@@ -90,7 +89,7 @@ const Favor = () => {
           </Dialog.Actions>
         </Dialog>
       </Portal>
-      <MyFlatl data={value} color="#f479a3" />
+      <MyFlatl data={value} color={'#f479a3'} trend={false} />
     </View>
   );
 };

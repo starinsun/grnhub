@@ -70,7 +70,7 @@ const Repo = ({data, color}) => {
           justifyContent: 'space-between',
         }}>
         <Title onPress={naviToDetail}>{full_name}</Title>
-        <Text>{description}</Text>
+        <Text onPress={naviToDetail}>{description}</Text>
         <View
           style={{
             flexDirection: 'row',
