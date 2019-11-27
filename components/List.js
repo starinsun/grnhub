@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-22 03:39:50
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-24 14:49:09
+ * @LastEditTime: 2019-11-27 01:58:04
  * @content: I
  */
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -12,7 +12,7 @@ import {ActivityIndicator} from 'react-native-paper';
 
 const List = () => {
   const Tab = createMaterialTopTabNavigator();
-  const [list, setList] = useState(['JS', 'TS', 'html', 'css', 'all']);
+  const [list, setList] = useState(['typescript', 'javascript', 'html', 'css']);
 
   return (
     <Tab.Navigator
@@ -26,6 +26,7 @@ const List = () => {
         activeTintColor: '#fff',
         inactiveTintColor: '#812111',
         style: {backgroundColor: '#00efef'},
+        scrollEnabled: true,
       }}>
       {list.map(item => {
         return <Tab.Screen name={item} component={ListContent} />;
