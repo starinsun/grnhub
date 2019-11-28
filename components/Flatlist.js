@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-24 15:01:12
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-27 23:57:40
+ * @LastEditTime: 2019-11-28 02:21:30
  * @content: I
  */
 import React from 'react';
@@ -14,11 +14,11 @@ const MyFlatl = ({data, color, trend}) => {
     <View>
       <FlatList
         data={data}
-        renderItem={({item}) => {
+        renderItem={({item, index}) => {
           return trend ? (
-            <RepoT data={item} color={color} />
+            <RepoT data={item} color={color} key={index} />
           ) : (
-            <Repo data={item} color={color} />
+            <Repo data={item} color={color} key={index} />
           );
         }}
         onRefresh={() => {}}

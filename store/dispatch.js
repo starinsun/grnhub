@@ -6,3 +6,4 @@
  */
 export const GET_SEARCH_DATA = 'getSearchData';
 export const GET_TREND_DATA = 'getTrendData';
+export const GET_TYPE_DATA = 'getTypeData';

@@ -4,7 +4,7 @@
  * @LastEditTime: 2019-11-28 00:48:42
  * @content: I
  */
-import {GET_SEARCH_DATA, GET_TREND_DATA} from './dispatch';
+import {GET_SEARCH_DATA, GET_TREND_DATA, GET_TYPE_DATA} from './dispatch';
 import axios from 'axios';
 
 export const getSearchDataByThunk = value => {
@@ -26,6 +26,19 @@ export const getTrendDataByThunk = () => {
     const res = await axios.get('https://github-trending-api.now.sh/');
     const action = {
       type: GET_TREND_DATA,
+      value: res.data,
+    };
+    dispatch(action);
+  };
+};
+
+export const getTypeDataByThunk = type => {
+  return async dispatch => {
+    const res = await axios.get(
+      `https://github-trending-api.now.sh/repositories?language=${type}&since=weekly`,
+    );
+    const action = {
+      type: GET_TYPE_DATA,
       value: res.data,
     };
     dispatch(action);

@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-21 21:34:48
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-27 19:15:18
+ * @LastEditTime: 2019-11-28 02:43:56
  * @content: I
  */
 import React from 'react';
@@ -44,24 +44,43 @@ const Detail = () => {
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          margin: 10,
+          alignItems: 'center',
+          marginHorizontal: 10,
         }}>
-        <Avatar.Image size={90} source={{uri: avatar}} style={{rotation: 20}} />
-        <View>
-          <Text
-            style={{
-              fontSize: 40,
-              fontWeight: 'bold',
-              textShadowColor: '#C0C0C0',
-              textShadowRadius: 2,
-              textShadowOffset: {width: 2, height: 2},
-            }}>
-            {name}
+        <Avatar.Image
+          size={110}
+          source={{uri: avatar}}
+          style={{rotation: 20}}
+        />
+        <View
+          style={{
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text style={{fontSize: 20, fontStyle: 'italic'}}>
+            主语言:{language}
           </Text>
-          <Text style={{fontSize: 25, fontWeight: '500', fontStyle: 'italic'}}>
-            作者： {author}
-          </Text>
+          <IconButton icon={languages} size={50} color="#000"></IconButton>
         </View>
+      </View>
+      <View style={{marginHorizontal: 10, alignItems: 'center'}}>
+        <Text
+          style={{
+            fontSize: 50,
+            fontWeight: 'bold',
+            textShadowColor: '#C0C0C0',
+            textShadowRadius: 2,
+            textShadowOffset: {width: 2, height: 2},
+            marginBottom: 10,
+          }}>
+          {name}
+        </Text>
+        <Text
+          style={{fontSize: 25, fontWeight: '500', fontStyle: 'italic'}}
+          numberOfLines={5}>
+          作者： {author}
+        </Text>
       </View>
       <View style={{margin: 10}}>
         <Text style={{fontSize: 20}}>简介： {description}</Text>
@@ -103,16 +122,6 @@ const Detail = () => {
           }}>
           冲丫~
         </Button>
-      </View>
-      <View
-        style={{
-          margin: 10,
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-        }}>
-        <Text style={{fontSize: 20, fontStyle: 'italic'}}>主语言:</Text>
-        <IconButton icon={languages} size={50}></IconButton>
       </View>
     </View>
   );

@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-20 21:21:28
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-27 23:53:03
+ * @LastEditTime: 2019-11-28 03:06:22
  * @content: I
  */
 import React, {useState, useEffect} from 'react';
@@ -57,9 +57,9 @@ const Favor = () => {
           title="My Favorite"
           subtitle="我喜欢的"
           titleStyle={{
-            textShadowColor: '#C0C0C0',
-            textShadowRadius: 2,
-            textShadowOffset: {width: 2, height: 2},
+            textShadowColor: '#f479a3',
+            textShadowRadius: 1,
+            textShadowOffset: {width: 1, height: 1},
           }}
           subtitleStyle={{fontSize: 12, fontStyle: 'italic'}}
         />

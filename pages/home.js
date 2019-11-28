@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-11-18 00:32:02
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-23 23:58:42
+ * @LastEditTime: 2019-11-28 03:07:04
  * @content: I
  */
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
@@ -20,7 +20,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 const Home = () => {
   return (
-    <Tab.Navigator activeColor="#f0edf6">
+    <Tab.Navigator activeColor="#f0edf6" initialRouteName="trend">
       <Tab.Screen
         name="list"
         component={List}

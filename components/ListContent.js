@@ -1,28 +1,29 @@
 /*
  * @Date: 2019-11-21 21:34:48
  * @LastEditors: Asen Wang
- * @LastEditTime: 2019-11-22 22:21:00
+ * @LastEditTime: 2019-11-28 02:23:33
  * @content: I
  */
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View} from 'react-native';
-import {Button} from 'react-native-paper';
 import {useNavigation, useRoute} from '@react-navigation/core';
+import {useDispatch, useSelector} from 'react-redux';
+import MyFlatl from './Flatlist';
+import {getTypeDataByThunk} from '../store/action';
 
 const ListContent = () => {
   const nav = useNavigation();
   const route = useRoute();
+  const dispatch = useDispatch();
   console.log(route);
+  useEffect(() => {
+    const action = getTypeDataByThunk(route.name);
+    dispatch(action);
+  }, []);
+  const data = useSelector(state => state.typeData);
   return (
     <View>
-      <Button
-        icon="camera"
-        mode="contained"
-        onPress={() => {
-          nav.navigate('detail');
-        }}>
-        {route.name}
-      </Button>
+      <MyFlatl data={data} color={'#00efef'} trend={true} />
     </View>
   );
 };
